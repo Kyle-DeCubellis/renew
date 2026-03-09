@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renew Aesthetic Medicine & Wellness | Southborough, MA</title>
+  <meta name="description" content="Renew Aesthetic Medicine & Wellness — Expert aesthetic medicine and total-body wellness in Southborough, MA. Botox, fillers, microneedling, laser, weight loss, and more. Founded by Dr. Teri Ciccone and Beth Domolky, RN." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* =========================================================
+       RESET & BASE
+    ========================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --charcoal: #2C2520;
+      --cream: #FAF7F2;
+      --gold: #B8975A;
+      --taupe: #8B7A68;
+      --sage: #7A9178;
+      --gold-light: rgba(184, 151, 90, 0.12);
+      --gold-border: rgba(184, 151, 90, 0.35);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* =========================================================
+       UTILITIES
+    ========================================================= */
+    .label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .gold-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--charcoal);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: #a6854a;
+      border-color: #a6854a;
+    }
+
+    .btn-ghost-dark {
+      background: transparent;
+      color: var(--charcoal);
+      border: 1px solid var(--charcoal);
+    }
+
+    .btn-ghost-dark:hover {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .btn-ghost-cream {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(250,247,242,0.5);
+    }
+
+    .btn-ghost-cream:hover {
+      background: rgba(250,247,242,0.1);
+      border-color: var(--cream);
+    }
+
+    /* =========================================================
+       FADE-UP ANIMATION
+    ========================================================= */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-up[data-delay="1"] { transition-delay: 0.1s; }
+    .fade-up[data-delay="2"] { transition-delay: 0.2s; }
+    .fade-up[data-delay="3"] { transition-delay: 0.3s; }
+    .fade-up[data-delay="4"] { transition-delay: 0.4s; }
+    .fade-up[data-delay="5"] { transition-delay: 0.5s; }
+    .fade-up[data-delay="6"] { transition-delay: 0.6s; }
+    .fade-up[data-delay="7"] { transition-delay: 0.7s; }
+    .fade-up[data-delay="8"] { transition-delay: 0.8s; }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 48px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+      background: transparent;
+    }
+
+    .nav.scrolled {
+      background: rgba(250, 247, 242, 0.97);
+      box-shadow: 0 2px 24px rgba(44, 37, 32, 0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo-primary {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 10px 24px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--charcoal);
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: rgba(250, 247, 242, 0.98);
+      padding: 32px 48px;
+      flex-direction: column;
+      gap: 24px;
+      border-top: 1px solid var(--gold-border);
+      z-index: 999;
+      box-shadow: 0 8px 32px rgba(44,37,32,0.08);
+    }
+
+    .mobile-nav.open {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(139,122,104,0.15);
+    }
+
+    .mobile-nav .nav-cta {
+      align-self: flex-start;
+      margin-top: 8px;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+    .hero {
+      min-height: 100vh;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 140px 80px 80px;
+    }
+
+    .hero-watermark {
+      position: absolute;
+      top: 50%;
+      left: -2%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(120px, 20vw, 260px);
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(184, 151, 90, 0.06);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-rule {
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 40px;
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 7vw, 82px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subhead {
+      font-family: 'Jost', sans-serif;
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--taupe);
+      max-width: 520px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 72px;
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      padding: 0 40px;
+    }
+
+    .stat-item:first-child {
+      padding-left: 0;
+    }
+
+    .stat-item:last-child {
+      padding-right: 0;
+    }
+
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--taupe);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--gold-border);
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       MARQUEE
+    ========================================================= */
+    .marquee-section {
+      background: var(--charcoal);
+      padding: 22px 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee-content {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .marquee-content span {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .marquee-dot {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin: 0 28px;
+      opacity: 0.6;
+      vertical-align: middle;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+    .services-section {
+      background: var(--charcoal);
+      padding: 100px 80px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-headline-light {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-top: 8px;
+    }
+
+    .section-headline-dark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-top: 8px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--cream);
+      padding: 40px 32px;
+      border-top: 3px solid transparent;
+      transition: all 0.35s ease;
+      cursor: default;
+    }
+
+    .service-card:hover {
+      border-top-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44,37,32,0.15);
+    }
+
+    .service-num {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--taupe);
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+    .about-section {
+      background: var(--cream);
+      padding: 120px 80px;
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .about-image-frame {
+      position: relative;
+      aspect-ratio: 4/5;
+    }
+
+    .about-frame-outer {
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gold-border);
+    }
+
+    .about-frame-inner {
+      position: absolute;
+      inset: 12px;
+      border: 1px solid var(--gold-border);
+      background: linear-gradient(145deg, #d4c4b0 0%, #e8ddd0 40%, #f0e8de 70%, var(--cream) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-est {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .about-est small {
+      display: block;
+      font-size: 16px;
+      font-style: normal;
+      font-family: 'Jost', sans-serif;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-top: 4px;
+    }
+
+    /* Corner ornaments */
+    .corner {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+    }
+
+    .corner::before,
+    .corner::after {
+      content: '';
+      position: absolute;
+      background: var(--gold);
+    }
+
+    .corner::before { width: 100%; height: 1px; top: 0; left: 0; }
+    .corner::after { width: 1px; height: 100%; top: 0; left: 0; }
+
+    .corner-tl { top: -1px; left: -1px; }
+    .corner-tr { top: -1px; right: -1px; transform: scaleX(-1); }
+    .corner-bl { bottom: -1px; left: -1px; transform: scaleY(-1); }
+    .corner-br { bottom: -1px; right: -1px; transform: scale(-1); }
+
+    .about-content {}
+
+    .about-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 3.5vw, 48px);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
+
+    .about-body {
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--taupe);
+      line-height: 1.85;
+      margin-bottom: 40px;
+    }
+
+    .about-body p + p {
+      margin-top: 20px;
+    }
+
+    .about-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    .about-link {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s ease;
+    }
+
+    .about-link:hover { gap: 14px; }
+
+    /* =========================================================
+       PROVIDERS
+    ========================================================= */
+    .providers-section {
+      background: #F5F2EC;
+      padding: 100px 80px;
+    }
+
+    .providers-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .provider-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 180px;
+      flex-shrink: 0;
+    }
+
+    .provider-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #8B7A68 0%, #7A9178 60%, #9aac97 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .provider-avatar::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-border);
+    }
+
+    .provider-initials {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: rgba(250,247,242,0.9);
+      letter-spacing: 0.05em;
+    }
+
+    .provider-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .provider-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--taupe);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .provider-specialty {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1.5;
+    }
+
+    /* =========================================================
+       REVIEWS
+    ========================================================= */
+    .reviews-section {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+
+    .reviews-rating-block {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .rating-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 88px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .rating-stars {
+      font-size: 24px;
+      color: var(--gold);
+      letter-spacing: 4px;
+      margin-bottom: 16px;
+    }
+
+    .rating-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--taupe);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .review-card {
+      background: #fff;
+      padding: 40px 36px;
+      box-shadow: 0 2px 20px rgba(44,37,32,0.06);
+      position: relative;
+    }
+
+    .review-quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 0.7;
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0.5;
+    }
+
+    .review-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .review-author {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       BOOKING CTA
+    ========================================================= */
+    .booking-section {
+      background: var(--charcoal);
+      padding: 120px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(184,151,90,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .booking-ornament {
+      margin: 0 auto 40px;
+      width: 48px;
+      height: 48px;
+      position: relative;
+    }
+
+    .booking-ornament::before,
+    .booking-ornament::after {
+      content: '';
+      position: absolute;
+      background: var(--gold);
+    }
+
+    .booking-ornament::before {
+      width: 1px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      opacity: 0.5;
+    }
+
+    .booking-ornament::after {
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+      opacity: 0.5;
+    }
+
+    .booking-ornament-diamond {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border: 1px solid var(--gold);
+      transform: rotate(45deg);
+      top: 50%;
+      left: 50%;
+      margin-top: -4px;
+      margin-left: -4px;
+      background: var(--charcoal);
+    }
+
+    .booking-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 5vw, 64px);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .booking-subhead {
+      font-family: 'Jost', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--taupe);
+      max-width: 500px;
+      margin: 0 auto 52px;
+      line-height: 1.8;
+    }
+
+    .booking-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    #booking-widget {
+      display: none;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+    .footer {
+      background: var(--charcoal);
+      border-top: 1px solid var(--gold-border);
+      padding: 72px 80px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 64px;
+    }
+
+    .footer-logo-primary {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .footer-logo-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(250,247,242,0.5);
+      margin-bottom: 24px;
+    }
+
+    .footer-col-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(250,247,242,0.6);
+      letter-spacing: 0.08em;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-contact-item {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(250,247,242,0.6);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .footer-contact-item a {
+      color: rgba(250,247,242,0.6);
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact-item a:hover { color: var(--gold); }
+
+    .footer-note {
+      font-size: 11px;
+      color: rgba(250,247,242,0.3);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(184,151,90,0.12);
+      padding: 20px 0;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-copyright {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--taupe);
+    }
+
+    /* =========================================================
+       RESPONSIVE — TABLET (768–1100px)
+    ========================================================= */
+    @media (max-width: 1100px) {
+      .nav { padding: 0 32px; }
+
+      .hero { padding: 120px 48px 80px; }
+
+      .services-section { padding: 80px 48px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .about-section { padding: 80px 48px; }
+      .about-inner { gap: 60px; }
+
+      .providers-section { padding: 80px 48px; }
+
+      .reviews-section { padding: 80px 48px; }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .booking-section { padding: 80px 48px; }
+
+      .footer { padding: 60px 48px 0; }
+      .footer-grid { gap: 48px; }
+    }
+
+    /* =========================================================
+       RESPONSIVE — MOBILE (<768px)
+    ========================================================= */
+    @media (max-width: 767px) {
+      .nav {
+        padding: 0 24px;
+        height: 68px;
+      }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav { padding: 24px; top: 68px; }
+
+      .hero {
+        padding: 100px 24px 60px;
+        min-height: 100svh;
+      }
+
+      .hero-watermark { display: none; }
+
+      .hero-headline { font-size: 42px; }
+      .hero-subhead { font-size: 15px; }
+
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { text-align: center; }
+
+      .hero-stats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .stat-divider { display: none; }
+      .stat-item { padding: 0; }
+
+      .services-section { padding: 60px 24px; }
+      .services-grid { grid-template-columns: 1fr; gap: 1px; }
+
+      .about-section { padding: 60px 24px; }
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .about-image-frame {
+        max-width: 340px;
+        margin: 0 auto;
+      }
+
+      .providers-section { padding: 60px 24px; }
+      .providers-row {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 16px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .provider-card {
+        scroll-snap-align: start;
+      }
+
+      .reviews-section { padding: 60px 24px; }
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .rating-number { font-size: 64px; }
+
+      .booking-section { padding: 80px 24px; }
+      .booking-ctas { flex-direction: column; align-items: center; }
+      .booking-ctas .btn { width: 100%; max-width: 320px; }
+
+      .footer { padding: 48px 24px 0; }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-bottom: 40px;
+      }
+
+      .section-header { padding: 0 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================= -->
+  <nav class="nav" id="main-nav">
+    <a href="#" class="nav-logo" aria-label="Renew Aesthetic Medicine & Wellness – Home">
+      <span class="nav-logo-primary">Renew</span>
+      <span class="nav-logo-sub">Aesthetic Medicine &amp; Wellness</span>
+    </a>
+
+    <ul class="nav-links" role="navigation" aria-label="Main navigation">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#providers">Providers</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+
+    <a href="tel:5083338894" class="nav-cta" aria-label="Book appointment by calling us">Book Now</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#services" class="mobile-nav-link">Services</a>
+    <a href="#providers" class="mobile-nav-link">Providers</a>
+    <a href="#reviews" class="mobile-nav-link">Reviews</a>
+    <a href="tel:5083338894" class="nav-cta">Book Now</a>
+  </div>
+
+  <!-- =========================================================
+       HERO
+  ========================================================= -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <div class="hero-watermark" aria-hidden="true">Renew</div>
+
+    <div class="hero-inner">
+      <div class="hero-rule fade-up"></div>
+
+      <h1 class="hero-headline fade-up" data-delay="1">
+        Beauty rooted in<br />medicine &amp; wellness
+      </h1>
+
+      <p class="hero-subhead fade-up" data-delay="2">
+        Expert clinicians dedicated to your aesthetic goals and total wellbeing — right here in Southborough, MA.
+      </p>
+
+      <div class="hero-ctas fade-up" data-delay="3">
+        <a href="tel:5083338894" class="btn btn-gold">Book Appointment</a>
+        <a href="#services" class="btn btn-ghost-dark">Explore Services</a>
+      </div>
+
+      <div class="hero-stats fade-up" data-delay="4">
+        <div class="stat-item">
+          <span class="stat-value">★ 5.0</span>
+          <span class="stat-label">Rating</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-value">146</span>
+          <span class="stat-label">Reviews</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-value">Est. 2018</span>
+          <span class="stat-label">Founded</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-value">Southborough</span>
+          <span class="stat-label">Massachusetts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MARQUEE
+  ========================================================= -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Botox</span><span class="marquee-dot"></span>
+        <span>Dermal Fillers</span><span class="marquee-dot"></span>
+        <span>Microneedling</span><span class="marquee-dot"></span>
+        <span>Laser Hair Removal</span><span class="marquee-dot"></span>
+        <span>IPL Rejuvenation</span><span class="marquee-dot"></span>
+        <span>Weight Loss</span><span class="marquee-dot"></span>
+        <span>Hormone Balance</span><span class="marquee-dot"></span>
+        <span>Facials</span><span class="marquee-dot"></span>
+        <span>Skin Care</span><span class="marquee-dot"></span>
+        <span>Botox</span><span class="marquee-dot"></span>
+        <span>Dermal Fillers</span><span class="marquee-dot"></span>
+        <span>Microneedling</span><span class="marquee-dot"></span>
+        <span>Laser Hair Removal</span><span class="marquee-dot"></span>
+        <span>IPL Rejuvenation</span><span class="marquee-dot"></span>
+        <span>Weight Loss</span><span class="marquee-dot"></span>
+        <span>Hormone Balance</span><span class="marquee-dot"></span>
+        <span>Facials</span><span class="marquee-dot"></span>
+        <span>Skin Care</span><span class="marquee-dot"></span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>Botox</span><span class="marquee-dot"></span>
+        <span>Dermal Fillers</span><span class="marquee-dot"></span>
+        <span>Microneedling</span><span class="marquee-dot"></span>
+        <span>Laser Hair Removal</span><span class="marquee-dot"></span>
+        <span>IPL Rejuvenation</span><span class="marquee-dot"></span>
+        <span>Weight Loss</span><span class="marquee-dot"></span>
+        <span>Hormone Balance</span><span class="marquee-dot"></span>
+        <span>Facials</span><span class="marquee-dot"></span>
+        <span>Skin Care</span><span class="marquee-dot"></span>
+        <span>Botox</span><span class="marquee-dot"></span>
+        <span>Dermal Fillers</span><span class="marquee-dot"></span>
+        <span>Microneedling</span><span class="marquee-dot"></span>
+        <span>Laser Hair Removal</span><span class="marquee-dot"></span>
+        <span>IPL Rejuvenation</span><span class="marquee-dot"></span>
+        <span>Weight Loss</span><span class="marquee-dot"></span>
+        <span>Hormone Balance</span><span class="marquee-dot"></span>
+        <span>Facials</span><span class="marquee-dot"></span>
+        <span>Skin Care</span><span class="marquee-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SERVICES
+  ========================================================= -->
+  <section class="services-section" id="services" aria-label="Services">
+    <div class="section-header">
+      <span class="label fade-up">Our Services</span>
+      <h2 class="section-headline-light fade-up" data-delay="1">Treatments tailored to you</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card fade-up" data-delay="1">
+        <span class="service-num">01</span>
+        <h3 class="service-name">Botox &amp; Neuromodulators</h3>
+        <p class="service-desc">Smooth lines, preserve natural expression</p>
+      </div>
+      <div class="service-card fade-up" data-delay="2">
+        <span class="service-num">02</span>
+        <h3 class="service-name">Dermal Fillers</h3>
+        <p class="service-desc">Restore volume and sculpt with precision</p>
+      </div>
+      <div class="service-card fade-up" data-delay="3">
+        <span class="service-num">03</span>
+        <h3 class="service-name">Microneedling</h3>
+        <p class="service-desc">Resurface and renew your skin's texture</p>
+      </div>
+      <div class="service-card fade-up" data-delay="4">
+        <span class="service-num">04</span>
+        <h3 class="service-name">Laser Hair Removal</h3>
+        <p class="service-desc">Permanent reduction for silky-smooth skin</p>
+      </div>
+      <div class="service-card fade-up" data-delay="5">
+        <span class="service-num">05</span>
+        <h3 class="service-name">IPL / Laser Skin Rejuvenation</h3>
+        <p class="service-desc">Correct pigment, redness, and sun damage</p>
+      </div>
+      <div class="service-card fade-up" data-delay="6">
+        <span class="service-num">06</span>
+        <h3 class="service-name">Medical Weight Loss</h3>
+        <p class="service-desc">Clinician-guided programs for lasting results</p>
+      </div>
+      <div class="service-card fade-up" data-delay="7">
+        <span class="service-num">07</span>
+        <h3 class="service-name">Hormone Balance &amp; Women's Health</h3>
+        <p class="service-desc">Feel balanced, energized, and fully yourself</p>
+      </div>
+      <div class="service-card fade-up" data-delay="8">
+        <span class="service-num">08</span>
+        <h3 class="service-name">Facials &amp; Skin Care</h3>
+        <p class="service-desc">Customized treatments for your skin's needs</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ABOUT
+  ========================================================= -->
+  <section class="about-section" id="about" aria-label="About">
+    <div class="about-inner">
+
+      <div class="about-image-frame fade-up">
+        <div class="about-frame-outer">
+          <span class="corner corner-tl" aria-hidden="true"></span>
+          <span class="corner corner-tr" aria-hidden="true"></span>
+          <span class="corner corner-bl" aria-hidden="true"></span>
+          <span class="corner corner-br" aria-hidden="true"></span>
+        </div>
+        <div class="about-frame-inner">
+          <div class="about-est">
+            Est. 2018
+            <small>Southborough, MA</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content fade-up" data-delay="2">
+        <span class="label">About Us</span>
+        <h2 class="about-headline">Medicine.<br />Artistry.<br />Wellness.</h2>
+        <div class="about-body">
+          <p>Founded in 2018 by Dr. Teri Ciccone and Beth Domolky, RN, Renew Aesthetic Medicine &amp; Wellness has grown into a trusted destination for aesthetic medicine and total-body wellness in Southborough, MA.</p>
+          <p>Our team of expert clinicians combines the science of medicine with an artist's eye — offering everything from Botox and fillers to medical weight loss, hormone therapy, and advanced skin treatments.</p>
+          <p>We believe in treating the whole patient. Your goals, your comfort, and your results drive every decision we make.</p>
+        </div>
+        <div class="about-divider"></div>
+        <a href="#providers" class="about-link">Meet our providers &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROVIDERS
+  ========================================================= -->
+  <section class="providers-section" id="providers" aria-label="Providers">
+    <div class="section-header">
+      <span class="label fade-up">Our Providers</span>
+      <h2 class="section-headline-dark fade-up" data-delay="1">Meet the team</h2>
+    </div>
+
+    <div class="providers-row">
+
+      <div class="provider-card fade-up" data-delay="1">
+        <div class="provider-avatar" aria-hidden="true">
+          <span class="provider-initials">TC</span>
+        </div>
+        <h3 class="provider-name">Dr. Teri Ciccone, MD</h3>
+        <p class="provider-title">Founder &amp; Physician</p>
+        <p class="provider-specialty">Aesthetic Medicine &amp; Women's Health</p>
+      </div>
+
+      <div class="provider-card fade-up" data-delay="2">
+        <div class="provider-avatar" style="background: linear-gradient(145deg, #7A9178 0%, #8B7A68 100%);" aria-hidden="true">
+          <span class="provider-initials">BD</span>
+        </div>
+        <h3 class="provider-name">Beth Domolky, RN</h3>
+        <p class="provider-title">Co-Founder &amp; Injector</p>
+        <p class="provider-specialty">Advanced Injectables &amp; Aesthetic Strategy</p>
+      </div>
+
+      <div class="provider-card fade-up" data-delay="3">
+        <div class="provider-avatar" style="background: linear-gradient(145deg, #9aac97 0%, #8B7A68 100%);" aria-hidden="true">
+          <span class="provider-initials">MC</span>
+        </div>
+        <h3 class="provider-name">Melanie Carvalho</h3>
+        <p class="provider-title">Esthetician</p>
+        <p class="provider-specialty">Facials, Microneedling &amp; Skin Care</p>
+      </div>
+
+      <div class="provider-card fade-up" data-delay="4">
+        <div class="provider-avatar" style="background: linear-gradient(145deg, #8B7A68 0%, #7A9178 60%, #b8a898 100%);" aria-hidden="true">
+          <span class="provider-initials">SC</span>
+        </div>
+        <h3 class="provider-name">Susan Copanos, RN BSN</h3>
+        <p class="provider-title">Injector &amp; Clinician</p>
+        <p class="provider-specialty">Injectables &amp; Skin Rejuvenation</p>
+      </div>
+
+      <div class="provider-card fade-up" data-delay="5">
+        <div class="provider-avatar" style="background: linear-gradient(145deg, #6b8a72 0%, #8B7A68 100%);" aria-hidden="true">
+          <span class="provider-initials">DD</span>
+        </div>
+        <h3 class="provider-name">Dorrie DeCubellis, RN BSN FNP-C</h3>
+        <p class="provider-title">Medical Director</p>
+        <p class="provider-specialty">Comprehensive Aesthetics &amp; Wellness</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       REVIEWS
+  ========================================================= -->
+  <section class="reviews-section" id="reviews" aria-label="Patient reviews">
+    <div class="section-header">
+      <span class="label fade-up">Patient Stories</span>
+      <h2 class="section-headline-dark fade-up" data-delay="1">What our patients say</h2>
+    </div>
+
+    <div class="reviews-rating-block fade-up" data-delay="2">
+      <div class="rating-number">5.0</div>
+      <div class="rating-stars" aria-label="5 stars">★★★★★</div>
+      <p class="rating-label">Based on 146 Google Reviews</p>
+      <div class="gold-rule"></div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card fade-up" data-delay="1">
+        <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
+        <p class="review-text">Best facial I have ever received! Melanie was fantastic.</p>
+        <span class="review-author">— Kaite R.</span>
+      </div>
+      <div class="review-card fade-up" data-delay="2">
+        <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
+        <p class="review-text">Beth is so knowledgeable and experienced, I trust her to answer all my questions.</p>
+        <span class="review-author">— Maddie D.</span>
+      </div>
+      <div class="review-card fade-up" data-delay="3">
+        <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
+        <p class="review-text">Beth is an artist... I actually drove from Maine to Southboro for an appt with Beth.</p>
+        <span class="review-author">— Nancy N.</span>
+      </div>
+      <div class="review-card fade-up" data-delay="4">
+        <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
+        <p class="review-text">Had my first Botox experience with Dorrie and couldn't be happier. Incredibly knowledgeable, gentle.</p>
+        <span class="review-author">— Shelby A.</span>
+      </div>
+      <div class="review-card fade-up" data-delay="5">
+        <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
+        <p class="review-text">Susan was great, so glad I was referred to her. Very knowledgeable, trusted her from the beginning.</p>
+        <span class="review-author">— Cassandra L.</span>
+      </div>
+      <div class="review-card fade-up" data-delay="6">
+        <span class="review-quote-mark" aria-hidden="true">&ldquo;</span>
+        <p class="review-text">Dr. Ciccone made me feel at ease and helped me lose 33+ lbs. I feel and sleep better.</p>
+        <span class="review-author">— Janet G.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       BOOKING CTA
+  ========================================================= -->
+  <section class="booking-section" id="book" aria-label="Book an appointment">
+    <div class="booking-ornament" aria-hidden="true">
+      <div class="booking-ornament-diamond"></div>
+    </div>
+
+    <h2 class="booking-headline fade-up">
+      Ready to feel like<br />yourself again?
+    </h2>
+
+    <p class="booking-subhead fade-up" data-delay="1">
+      Schedule your consultation today. Our team is ready to help you look and feel your best.
+    </p>
+
+    <div class="booking-ctas fade-up" data-delay="2">
+      <a href="tel:5083338894" class="btn btn-gold">Book Appointment</a>
+      <a href="tel:5083338894" class="btn btn-ghost-cream">Call Us: (508) 333-8894</a>
+    </div>
+
+    <div id="booking-widget" aria-hidden="true"></div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer-grid">
+
+      <div>
+        <span class="footer-logo-primary">Renew</span>
+        <span class="footer-logo-sub">Aesthetic Medicine &amp; Wellness</span>
+        <p class="footer-tagline">Where medicine meets artistry.</p>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Quick Links</span>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#providers">Providers</a>
+          <a href="#reviews">Reviews</a>
+          <a href="tel:5083338894">Book Now</a>
+        </nav>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Contact</span>
+        <p class="footer-contact-item">Southborough, MA</p>
+        <p class="footer-contact-item">
+          <a href="tel:5083338894">(508) 333-8894</a>
+        </p>
+        <p class="footer-contact-item footer-note">By appointment</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2025 Renew Aesthetic Medicine &amp; Wellness. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================= -->
+  <script>
+    // ---- Nav scroll state ----
+    const nav = document.getElementById('main-nav');
+
+    function handleNavScroll() {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
+    handleNavScroll();
+
+    // ---- Hamburger menu ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', function () {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+
+    // Close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open menu');
+      });
+    });
+
+    // ---- IntersectionObserver fade-up ----
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    fadeElements.forEach(function (el) {
+      observer.observe(el);
+    });
+
+    // ---- Smooth scroll polyfill for anchor links (fallback) ----
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
