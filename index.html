@@ -1502,17 +1502,19 @@
 
       .services-section { padding: 48px 24px; }
       .services-headline { font-size: clamp(60px, 18vw, 90px); }
+      /* Start cards at top of row so missing images don't create gaps */
+      .services-grid { align-items: start; }
+      /* Ensure image slot always reserves space even if image is missing */
+      .service-card-image { min-height: 120px; background: var(--cream); }
 
-      .about-section { padding: 60px 24px; }
+      .about-section { padding: 48px 24px; overflow: hidden; }
       .about-inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
+        display: block; /* single column, no grid strangeness */
       }
 
-      .about-image-frame {
-        max-width: 340px;
-        margin: 0 auto;
-      }
+      /* Hide decorative frame on mobile — content tells the story */
+      .about-image-frame { display: none; }
+      .about-headline { font-size: clamp(44px, 13vw, 64px); }
 
       .providers-section { padding: 60px 24px; }
 
