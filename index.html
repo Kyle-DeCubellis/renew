@@ -237,6 +237,10 @@
       color: var(--charcoal);
     }
 
+    .nav-appt-pill {
+      display: none;
+    }
+
     .hamburger {
       display: none;
       flex-direction: column;
@@ -1388,6 +1392,30 @@
         display: none;
       }
 
+      .nav-appt-pill {
+        display: inline-flex;
+        align-items: center;
+        font-family: 'Jost', sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        border: 1px solid var(--gold);
+        border-radius: 999px;
+        padding: 6px 14px;
+        text-decoration: none;
+        white-space: nowrap;
+        margin-right: 12px;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+
+      .nav-appt-pill:hover,
+      .nav-appt-pill:active {
+        background: var(--gold);
+        color: var(--charcoal);
+      }
+
       .hamburger {
         display: flex;
       }
@@ -1704,6 +1732,8 @@
     </ul>
 
     <button onclick="openBookingModal()" class="nav-cta" aria-label="Book appointment online">Book Now</button>
+
+    <a href="#contact" class="nav-appt-pill">Request Appointment</a>
 
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span>
