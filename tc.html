@@ -89,79 +89,31 @@
       transition: all 0.3s;
     }
 
-    .nav-cta:hover { background: var(--gold); color: var(--charcoal); }
-
-    /* HERO */
-    .provider-hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 0 80px 100px;
+    .nav-cta:hover { background: var(--gold); color: var(--charcoal); }    .provider-photo-wrap { padding-top: 80px; }
+    .provider-photo-card {
+      margin: 28px 40px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 14px 64px rgba(44,37,32,0.18), 0 2px 8px rgba(44,37,32,0.08);
     }
-
-    .provider-hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('Images/tc.webp');
-      background-size: cover;
-      background-position: center top;
+    .provider-photo-card img { width: 100%; height: auto; display: block; }
+    .provider-header { padding: 48px 80px 0; }
+    .provider-header-label {
+      font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 16px; display: block;
     }
-
-    .provider-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(44, 37, 32, 0.85) 0%,
-        rgba(44, 37, 32, 0.40) 50%,
-        rgba(44, 37, 32, 0.10) 100%
-      );
+    .provider-header-name {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 5vw, 72px);
+      font-weight: 400; color: var(--charcoal); line-height: 1.05; margin-bottom: 10px;
     }
-
-    .provider-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
+    .provider-header-creds {
+      font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400;
+      letter-spacing: 0.12em; color: var(--taupe); margin-bottom: 8px;
     }
-
-    .provider-hero-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .provider-hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(48px, 7vw, 88px);
-      font-weight: 400;
-      color: var(--cream);
-      line-height: 1.0;
-      margin-bottom: 20px;
-    }
-
-    .provider-hero-title {
-      font-family: 'Jost', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(250, 247, 242, 0.75);
-      margin-bottom: 10px;
-    }
-
-    .provider-hero-specialty {
-      font-family: 'Jost', sans-serif;
-      font-size: 13px;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      color: rgba(250, 247, 242, 0.6);
-      font-style: italic;
+    .provider-header-specialty {
+      font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 300;
+      letter-spacing: 0.08em; color: var(--taupe); font-style: italic;
     }
 
     /* BIO SECTION */
@@ -252,8 +204,9 @@
     @media (max-width: 767px) {
       .nav { padding: 0 24px; height: 68px; }
       .nav-back { display: none; }
-      .provider-hero { padding: 0 24px 80px; }
-      .provider-hero-name { font-size: clamp(40px, 10vw, 64px); }
+      .provider-photo-wrap { padding-top: 68px; }
+      .provider-photo-card { margin: 14px 14px; border-radius: 14px; }
+      .provider-header { padding: 28px 24px 0; }
       .provider-bio { padding: 60px 24px; }
       .provider-footer { padding: 40px 24px; flex-direction: column; gap: 24px; text-align: center; }
       .provider-footer-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
@@ -271,16 +224,16 @@
     <button class="nav-cta" onclick="window.location.href='index.html'">Book Now</button>
   </nav>
 
-  <section class="provider-hero" aria-label="Dr. Teri Ciccone">
-    <div class="provider-hero-bg" aria-hidden="true"></div>
-    <div class="provider-hero-overlay" aria-hidden="true"></div>
-    <div class="provider-hero-content">
-      <span class="provider-hero-label">Founder &amp; Physician</span>
-      <h1 class="provider-hero-name">Dr. Teri<br>Ciccone, MD</h1>
-      <p class="provider-hero-title">Aesthetic Medicine &amp; Women's Health</p>
-      <p class="provider-hero-specialty">Est. 2016 · Southborough, MA</p>
+  <div class="provider-photo-wrap">
+    <div class="provider-photo-card">
+      <img src="Images/tc.webp" alt="Dr. Teri Ciccone, MD">
     </div>
-  </section>
+  </div>
+  <div class="provider-header">
+    <span class="provider-header-label">Founder &amp; Physician</span>
+    <h1 class="provider-header-name">Dr. Teri Ciccone, MD</h1>
+    <p class="provider-header-specialty">Aesthetic Medicine &amp; Wellness &middot; Southborough, MA</p>
+  </div>
 
   <div class="provider-bio">
     <div class="gold-rule"></div>
