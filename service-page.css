@@ -44,13 +44,15 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: flex-end;
   padding: 0 80px 100px;
+  background: var(--charcoal);
 }
 
 .service-hero-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .service-hero-overlay {
