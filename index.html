@@ -419,6 +419,9 @@
       flex-shrink: 0;
     }
 
+    /* Mobile-only brand splash — hidden on desktop */
+    .hero-splash { display: none; }
+
     /* =========================================================
        MARQUEE
     ========================================================= */
@@ -1096,27 +1099,78 @@
 
       .mobile-nav { padding: 24px; top: 68px; }
 
+      /* ---- Mobile hero: centered brand splash matching live site ---- */
       .hero {
-        padding: 100px 24px 60px;
+        padding: 90px 32px 56px;
         min-height: 100svh;
+        justify-content: center;
+        align-items: center;
+        background-color: #e3e0db;
+        background-image:
+          radial-gradient(ellipse at 18% 22%, rgba(195,192,186,0.6) 0%, transparent 40%),
+          radial-gradient(ellipse at 82% 78%, rgba(210,206,200,0.45) 0%, transparent 48%),
+          radial-gradient(ellipse at 58% 42%, rgba(222,219,214,0.35) 0%, transparent 55%);
+      }
+
+      .hero-inner {
+        align-items: center;
+        text-align: center;
+        width: 100%;
       }
 
       .hero-watermark { display: none; }
+      .hero-rule     { display: none; }
+      .hero-headline { display: none; }
+      .hero-subhead  { display: none; }
+      .hero-stats    { display: none; }
+      .stat-divider  { display: none; }
+      .stat-item     { padding: 0; }
 
-      .hero-headline { font-size: 42px; }
-      .hero-subhead { font-size: 15px; }
-
-      .hero-ctas { flex-direction: column; }
-      .hero-ctas .btn { text-align: center; }
-
-      .hero-stats {
+      /* Show brand splash on mobile */
+      .hero-splash {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+        align-items: center;
+        margin-bottom: 32px;
       }
 
-      .stat-divider { display: none; }
-      .stat-item { padding: 0; }
+      .hero-splash svg {
+        width: 158px;
+        height: 158px;
+      }
+
+      .hero-splash-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 88px;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--charcoal);
+        line-height: 1;
+        margin-top: 10px;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-splash-est {
+        font-family: 'Jost', sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+        margin-top: 12px;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+      }
+
+      .hero-ctas .btn {
+        text-align: center;
+        width: 100%;
+        max-width: 280px;
+      }
 
       .services-section { padding: 60px 24px; }
       .services-grid { grid-template-columns: 1fr; gap: 1px; }
@@ -1356,6 +1410,44 @@
     <div class="hero-watermark" aria-hidden="true">Renew</div>
 
     <div class="hero-inner">
+
+      <!-- Mobile brand splash (hidden on desktop via CSS) -->
+      <div class="hero-splash" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" stroke="#B8975A" stroke-width="1.1" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer ring: 16 petals -->
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(0 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(22.5 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(45 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(67.5 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(90 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(112.5 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(135 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(157.5 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(180 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(202.5 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(225 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(247.5 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(270 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(292.5 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(315 100 100)"/>
+          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(337.5 100 100)"/>
+          <!-- Inner ring: 8 petals -->
+          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(0 100 100)"/>
+          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(45 100 100)"/>
+          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(90 100 100)"/>
+          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(135 100 100)"/>
+          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(180 100 100)"/>
+          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(225 100 100)"/>
+          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(270 100 100)"/>
+          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(315 100 100)"/>
+          <!-- Center -->
+          <circle cx="100" cy="100" r="14" stroke-width="0.9"/>
+          <circle cx="100" cy="100" r="5" fill="#B8975A" stroke="none"/>
+        </svg>
+        <span class="hero-splash-name">Renew</span>
+        <span class="hero-splash-est">Est. 2018</span>
+      </div>
+
       <div class="hero-rule fade-up"></div>
 
       <h1 class="hero-headline fade-up" data-delay="1">
