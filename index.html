@@ -1428,11 +1428,10 @@
         min-height: 100svh;
         justify-content: center;
         align-items: center;
-        background-color: #e3e0db;
-        background-image:
-          radial-gradient(ellipse at 18% 22%, rgba(195,192,186,0.6) 0%, transparent 40%),
-          radial-gradient(ellipse at 82% 78%, rgba(210,206,200,0.45) 0%, transparent 48%),
-          radial-gradient(ellipse at 58% 42%, rgba(222,219,214,0.35) 0%, transparent 55%);
+        background-color: #c0bdb8;
+        background-image: url('Images/2783808.webp');
+        background-size: cover;
+        background-position: center;
       }
 
       .hero-inner {
@@ -1457,30 +1456,10 @@
         margin-bottom: 32px;
       }
 
-      .hero-splash svg {
-        width: 158px;
-        height: 158px;
-      }
-
-      .hero-splash-name {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 88px;
-        font-style: italic;
-        font-weight: 300;
-        color: var(--charcoal);
-        line-height: 1;
-        margin-top: 10px;
-        letter-spacing: -0.02em;
-      }
-
-      .hero-splash-est {
-        font-family: 'Jost', sans-serif;
-        font-size: 11px;
-        font-weight: 400;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        color: var(--charcoal);
-        margin-top: 12px;
+      .hero-logo-img {
+        width: min(320px, 85vw);
+        height: auto;
+        display: block;
       }
 
       .hero-ctas {
@@ -1794,39 +1773,7 @@
 
       <!-- Mobile brand splash (hidden on desktop via CSS) -->
       <div class="hero-splash" aria-hidden="true">
-        <svg viewBox="0 0 200 200" fill="none" stroke="#B8975A" stroke-width="1.1" xmlns="http://www.w3.org/2000/svg">
-          <!-- Outer ring: 16 petals -->
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(0 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(22.5 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(45 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(67.5 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(90 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(112.5 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(135 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(157.5 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(180 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(202.5 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(225 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(247.5 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(270 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(292.5 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(315 100 100)"/>
-          <path d="M100 97 C90 71 87 43 100 21 C113 43 110 71 100 97Z" transform="rotate(337.5 100 100)"/>
-          <!-- Inner ring: 8 petals -->
-          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(0 100 100)"/>
-          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(45 100 100)"/>
-          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(90 100 100)"/>
-          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(135 100 100)"/>
-          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(180 100 100)"/>
-          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(225 100 100)"/>
-          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(270 100 100)"/>
-          <path d="M100 96 C94 82 92 66 100 53 C108 66 106 82 100 96Z" transform="rotate(315 100 100)"/>
-          <!-- Center -->
-          <circle cx="100" cy="100" r="14" stroke-width="0.9"/>
-          <circle cx="100" cy="100" r="5" fill="#B8975A" stroke="none"/>
-        </svg>
-        <span class="hero-splash-name">Renew</span>
-        <span class="hero-splash-est">Est. 2018</span>
+        <img src="Images/Banner New Logo Renew .webp" alt="Renew Aesthetic Medicine &amp; Wellness" class="hero-logo-img">
       </div>
 
       <div class="hero-rule fade-up"></div>
@@ -2394,6 +2341,14 @@
       });
     });
   </script>
+
+  <!-- AudioEye Accessibility -->
+  <script>!function(){var b=function(){window.__AudioEyeSiteHash = "1cbcc4f68ce01a965cf3364d11481c2b"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script>
+
+  <!-- Tebra Chat / Text Widget -->
+  <script type="text/javascript">"use strict";window.wm=window.wm||{};const initTebraWidgetManager=()=>{const wmDeferredCommands=[];const TEBRA_WIDGET_MANAGER_METHODS=["initializeManager","registerWidget","broadcastMessage"];window.wmOnScriptLoad=()=>{window.addEventListener("actionCall",e=>{return window.WidgetManager.widgetClick(e.detail.callParameter)});wmDeferredCommands.forEach(cmd=>{window.WidgetManager[cmd.command](...cmd.args)})};TEBRA_WIDGET_MANAGER_METHODS.forEach(wmMethod=>{window.wm[wmMethod]=(...args)=>{const deferredCommand={command:wmMethod,args};if(window.WidgetManager&&window.WidgetManager[deferredCommand.command]){window.WidgetManager[deferredCommand.command](...deferredCommand.args)}else{wmDeferredCommands.push(deferredCommand)}}})};initTebraWidgetManager();</script>
+  <script src="https://d35hk7lgnvai11.cloudfront.net/widgetManager.js" onload="wmOnScriptLoad()" defer async></script>
+  <script>window.wm.initializeManager('5d1d5cde-10d8-46aa-a1ca-f1934124963e');</script>
 
 </body>
 </html>
