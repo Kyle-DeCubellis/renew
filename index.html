@@ -803,16 +803,26 @@
        PROVIDERS
     ========================================================= */
     .providers-section {
-      background: #F5F2EC;
-      padding: 100px 80px;
+      background: #7A8880;
+      padding: 80px 40px;
+    }
+
+    .providers-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(56px, 9vw, 110px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 0.9;
+      margin-bottom: 56px;
     }
 
     .providers-row {
       display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      max-width: 1200px;
+      flex-direction: column;
+      align-items: center;
+      gap: 64px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
@@ -821,72 +831,43 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      width: 180px;
-      flex-shrink: 0;
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
     }
 
     .provider-avatar {
-      width: 120px;
-      height: 120px;
+      width: min(360px, 80vw);
+      height: min(360px, 80vw);
       border-radius: 50%;
-      background: linear-gradient(145deg, #8B7A68 0%, #7A9178 60%, #9aac97 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      position: relative;
-      flex-shrink: 0;
       overflow: hidden;
+      margin-bottom: 28px;
+      flex-shrink: 0;
     }
 
     .provider-avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .provider-avatar::after {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border-radius: 50%;
-      border: 1px solid var(--gold-border);
-    }
-
-    .provider-initials {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 500;
-      color: rgba(250,247,242,0.9);
-      letter-spacing: 0.05em;
+      object-position: center top;
     }
 
     .provider-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 500;
-      color: var(--charcoal);
-      line-height: 1.3;
-      margin-bottom: 6px;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
     .provider-title {
       font-family: 'Jost', sans-serif;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 400;
-      letter-spacing: 0.1em;
-      color: var(--taupe);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .provider-specialty {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      color: var(--gold);
-      line-height: 1.5;
+      letter-spacing: 0.08em;
+      color: rgba(250, 247, 242, 0.7);
     }
 
     /* =========================================================
@@ -978,44 +959,103 @@
     ========================================================= */
     .contact-section {
       background: var(--cream);
-      padding: 120px 80px;
-      text-align: center;
+      padding: 0;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 48px;
-      max-width: 1100px;
-      margin: 60px auto 0;
-      text-align: left;
+    .contact-map { width: 100%; line-height: 0; }
+    .contact-map iframe { display: block; width: 100%; }
+
+    .contact-info {
+      padding: 56px 48px 72px;
+      max-width: 800px;
     }
 
-    .contact-block {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
+    .contact-city {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 52px);
       font-weight: 500;
-      letter-spacing: 0.2em;
+      color: var(--charcoal);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--gold);
+      margin-bottom: 16px;
     }
 
-    .contact-value {
+    .contact-address {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .contact-hours-label {
       font-family: 'Jost', sans-serif;
       font-size: 14px;
       font-weight: 400;
-      line-height: 1.8;
       color: var(--charcoal);
-      text-decoration: none;
+      margin-bottom: 12px;
     }
 
-    a.contact-value:hover { color: var(--gold); }
+    .contact-hours-table {
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+
+    .contact-hours-table td {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--charcoal);
+      padding: 4px 32px 4px 0;
+      vertical-align: top;
+    }
+
+    .contact-hours-table td:first-child {
+      min-width: 110px;
+    }
+
+    .contact-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn-call {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      background: #C8C4BC;
+      border: none;
+      padding: 16px 28px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .contact-btn-call:hover { opacity: 0.85; }
+
+    .contact-btn-book {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      background: var(--gold);
+      border: none;
+      padding: 16px 28px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .contact-btn-book:hover { opacity: 0.85; }
 
     .booking-section {
       background: var(--charcoal);
@@ -1238,13 +1278,12 @@
       .about-section { padding: 80px 48px; }
       .about-inner { gap: 60px; }
 
-      .providers-section { padding: 80px 48px; }
+      .providers-section { padding: 60px 48px; }
 
       .reviews-section { padding: 80px 48px; }
       .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 
-      .contact-section { padding: 80px 48px; }
-      .contact-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .contact-info { padding: 48px 40px 64px; }
 
       .booking-section { padding: 80px 48px; }
 
@@ -1360,18 +1399,6 @@
       }
 
       .providers-section { padding: 60px 24px; }
-      .providers-row {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        padding-bottom: 16px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .provider-card {
-        scroll-snap-align: start;
-      }
 
       .reviews-section { padding: 60px 24px; }
       .reviews-grid {
@@ -1381,9 +1408,9 @@
 
       .rating-number { font-size: 64px; }
 
-      .contact-section { padding: 60px 24px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
-      .contact-block { align-items: center; }
+      .contact-info { padding: 40px 24px 56px; }
+      .contact-ctas { flex-direction: column; }
+      .contact-btn-call, .contact-btn-book { text-align: center; }
 
       .booking-section { padding: 80px 24px; }
       .booking-ctas { flex-direction: column; align-items: center; }
@@ -1873,57 +1900,49 @@
        PROVIDERS
   ========================================================= -->
   <section class="providers-section" id="providers" aria-label="Providers">
-    <div class="section-header">
-      <span class="label fade-up">Our Providers</span>
-      <h2 class="section-headline-dark fade-up" data-delay="1">Meet the team</h2>
-    </div>
+    <h2 class="providers-headline fade-up">Meet Our<br>Providers</h2>
 
     <div class="providers-row">
 
-      <div class="provider-card fade-up" data-delay="1">
+      <a href="tc.html" class="provider-card fade-up" data-delay="1">
         <div class="provider-avatar">
           <img src="Images/tc.webp" alt="Dr. Teri Ciccone, MD">
         </div>
-        <h3 class="provider-name">Dr. Teri Ciccone, MD</h3>
-        <p class="provider-title">Founder &amp; Physician</p>
-        <p class="provider-specialty">Aesthetic Medicine &amp; Women's Health</p>
-      </div>
+        <h3 class="provider-name">Teri Ciccone, MD</h3>
+        <p class="provider-title">Board Certified Physician</p>
+      </a>
 
-      <div class="provider-card fade-up" data-delay="2">
+      <a href="bd.html" class="provider-card fade-up" data-delay="2">
         <div class="provider-avatar">
           <img src="Images/bd.webp" alt="Beth Domolky, RN">
         </div>
         <h3 class="provider-name">Beth Domolky, RN</h3>
         <p class="provider-title">Co-Founder &amp; Injector</p>
-        <p class="provider-specialty">Advanced Injectables &amp; Aesthetic Strategy</p>
-      </div>
+      </a>
 
-      <div class="provider-card fade-up" data-delay="3">
+      <a href="mc.html" class="provider-card fade-up" data-delay="3">
         <div class="provider-avatar">
           <img src="Images/mc.webp" alt="Melanie Carvalho">
         </div>
         <h3 class="provider-name">Melanie Carvalho</h3>
         <p class="provider-title">Esthetician</p>
-        <p class="provider-specialty">Facials, Microneedling &amp; Skin Care</p>
-      </div>
+      </a>
 
-      <div class="provider-card fade-up" data-delay="4">
+      <a href="sc.html" class="provider-card fade-up" data-delay="4">
         <div class="provider-avatar">
           <img src="Images/sc.webp" alt="Susan Copanos, RN BSN">
         </div>
         <h3 class="provider-name">Susan Copanos, RN BSN</h3>
         <p class="provider-title">Injector &amp; Clinician</p>
-        <p class="provider-specialty">Injectables &amp; Skin Rejuvenation</p>
-      </div>
+      </a>
 
-      <div class="provider-card fade-up" data-delay="5">
+      <a href="dd.html" class="provider-card fade-up" data-delay="5">
         <div class="provider-avatar">
           <img src="Images/dd.png" alt="Dorrie DeCubellis, RN BSN FNP-C">
         </div>
         <h3 class="provider-name">Dorrie DeCubellis, RN BSN FNP-C</h3>
         <p class="provider-title">Medical Director</p>
-        <p class="provider-specialty">Comprehensive Aesthetics &amp; Wellness</p>
-      </div>
+      </a>
 
     </div>
   </section>
@@ -2006,33 +2025,30 @@
        CONTACT
   ========================================================= -->
   <section class="contact-section" id="contact" aria-label="Contact">
-    <div class="section-header">
-      <span class="label fade-up">Get In Touch</span>
-      <h2 class="section-headline-dark fade-up" data-delay="1">Visit us in Southborough</h2>
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.123456789!2d-71.5264!3d42.3051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e38a1234567890%3A0xabcdef1234567890!2s60%20Central%20St%2C%20Southborough%2C%20MA%2001745!5e0!3m2!1sen!2sus!4v1234567890"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Renew Aesthetic Medicine &amp; Wellness location map"></iframe>
     </div>
-    <div class="contact-grid fade-up" data-delay="2">
-      <div class="contact-block">
-        <span class="contact-label">Address</span>
-        <a href="https://maps.google.com/?q=60+Central+Street+Southborough+MA+01745" target="_blank" rel="noopener" class="contact-value">60 Central Street<br>Southborough, MA 01745</a>
+    <div class="contact-info fade-up">
+      <h2 class="contact-city">Southborough</h2>
+      <p class="contact-address">60 Central Street,<br>Southborough, MA 01745</p>
+      <div class="contact-hours-block">
+        <p class="contact-hours-label">Hours Of Operation:</p>
+        <table class="contact-hours-table">
+          <tr><td>Monday:</td><td>12:00 PM – 8:00 PM</td></tr>
+          <tr><td>Tuesday:</td><td>10:00 AM – 8:00 PM</td></tr>
+          <tr><td>Wednesday:</td><td>10:00 AM – 5:00 PM</td></tr>
+          <tr><td>Thursday:</td><td>9:00 AM – 4:00 PM</td></tr>
+          <tr><td>Friday:</td><td>By Appointment Only</td></tr>
+          <tr><td>Saturday:</td><td>By Appointment Only</td></tr>
+          <tr><td>Sunday:</td><td>11:00 AM – 4:00 PM</td></tr>
+        </table>
       </div>
-      <div class="contact-block">
-        <span class="contact-label">Phone</span>
-        <a href="tel:5083338894" class="contact-value">(508) 333-8894</a>
-      </div>
-      <div class="contact-block">
-        <span class="contact-label">Hours</span>
-        <p class="contact-value">
-          Mon: 12:00 PM – 8:00 PM<br>
-          Tue: 10:00 AM – 8:00 PM<br>
-          Wed: 10:00 AM – 5:00 PM<br>
-          Thu: 9:00 AM – 4:00 PM<br>
-          Fri &amp; Sat: By Appointment<br>
-          Sun: 11:00 AM – 4:00 PM
-        </p>
-      </div>
-      <div class="contact-block">
-        <span class="contact-label">Book Online</span>
-        <button onclick="openBookingModal()" class="btn btn-gold" style="margin-top:8px;">Book Free Consultation</button>
+      <div class="contact-ctas">
+        <a href="tel:5083338894" class="contact-btn-call">Call 508-333-8894</a>
+        <button onclick="openBookingModal()" class="contact-btn-book">Request Appointment</button>
       </div>
     </div>
   </section>
