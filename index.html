@@ -939,19 +939,18 @@
     .instagram-feed-placeholder {
       flex-shrink: 0;
       display: flex;
-      gap: 8px;
-      max-height: 500px;
-      overflow: hidden;
+      flex-direction: column;
+      gap: 16px;
+      width: 340px;
     }
 
     .ig-screenshot {
-      width: 200px;
-      height: 500px;
-      object-fit: cover;
-      object-position: top;
+      width: 100%;
+      height: auto;
       display: block;
       opacity: 0.9;
       transition: opacity 0.3s;
+      border-radius: 4px;
     }
 
     .instagram-feed-placeholder a:hover .ig-screenshot { opacity: 1; }
@@ -1487,7 +1486,7 @@
       .instagram-section { padding: 60px 24px; }
       .instagram-inner { flex-direction: column; gap: 48px; }
       .instagram-feed-placeholder { width: 100%; }
-      .ig-screenshot { width: 50%; height: 360px; }
+      .ig-screenshot { width: 100%; height: auto; }
       .reviews-section { padding: 60px 24px; }
       .reviews-grid {
         grid-template-columns: 1fr;
@@ -1888,6 +1887,42 @@
   </div>
 
   <!-- =========================================================
+       ABOUT
+  ========================================================= -->
+  <section class="about-section" id="about" aria-label="About">
+    <div class="about-inner">
+
+      <div class="about-image-frame fade-up">
+        <div class="about-frame-outer">
+          <span class="corner corner-tl" aria-hidden="true"></span>
+          <span class="corner corner-tr" aria-hidden="true"></span>
+          <span class="corner corner-bl" aria-hidden="true"></span>
+          <span class="corner corner-br" aria-hidden="true"></span>
+        </div>
+        <div class="about-frame-inner">
+          <div class="about-est">
+            Est. 2018
+            <small>Southborough, MA</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content fade-up" data-delay="2">
+        <span class="label">About Us</span>
+        <h2 class="about-headline">Medicine.<br />Artistry.<br />Wellness.</h2>
+        <div class="about-body">
+          <p>Founded in 2018 by Dr. Teri Ciccone and Beth Domolky, RN, Renew Aesthetic Medicine &amp; Wellness has grown into a trusted destination for aesthetic medicine and total-body wellness in Southborough, MA.</p>
+          <p>Our team of expert clinicians combines the science of medicine with an artist's eye — offering everything from Botox and fillers to medical weight loss, hormone therapy, and advanced skin treatments.</p>
+          <p>We believe in treating the whole patient. Your goals, your comfort, and your results drive every decision we make.</p>
+        </div>
+        <div class="about-divider"></div>
+        <a href="#providers" class="about-link">Meet our providers &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
        SERVICES
   ========================================================= -->
   <section class="services-section" id="services" aria-label="Services">
@@ -1949,42 +1984,6 @@
   </section>
 
   <!-- =========================================================
-       ABOUT
-  ========================================================= -->
-  <section class="about-section" id="about" aria-label="About">
-    <div class="about-inner">
-
-      <div class="about-image-frame fade-up">
-        <div class="about-frame-outer">
-          <span class="corner corner-tl" aria-hidden="true"></span>
-          <span class="corner corner-tr" aria-hidden="true"></span>
-          <span class="corner corner-bl" aria-hidden="true"></span>
-          <span class="corner corner-br" aria-hidden="true"></span>
-        </div>
-        <div class="about-frame-inner">
-          <div class="about-est">
-            Est. 2018
-            <small>Southborough, MA</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-content fade-up" data-delay="2">
-        <span class="label">About Us</span>
-        <h2 class="about-headline">Medicine.<br />Artistry.<br />Wellness.</h2>
-        <div class="about-body">
-          <p>Founded in 2018 by Dr. Teri Ciccone and Beth Domolky, RN, Renew Aesthetic Medicine &amp; Wellness has grown into a trusted destination for aesthetic medicine and total-body wellness in Southborough, MA.</p>
-          <p>Our team of expert clinicians combines the science of medicine with an artist's eye — offering everything from Botox and fillers to medical weight loss, hormone therapy, and advanced skin treatments.</p>
-          <p>We believe in treating the whole patient. Your goals, your comfort, and your results drive every decision we make.</p>
-        </div>
-        <div class="about-divider"></div>
-        <a href="#providers" class="about-link">Meet our providers &rarr;</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================
        PROVIDERS
   ========================================================= -->
   <section class="providers-section" id="providers" aria-label="Providers">
@@ -2036,9 +2035,6 @@
   </section>
 
   <!-- =========================================================
-       REVIEWS
-  ========================================================= -->
-  <!-- =========================================================
        INSTAGRAM
   ========================================================= -->
   <section class="instagram-section" id="instagram" aria-label="Follow us on Instagram">
@@ -2061,6 +2057,9 @@
     </div>
   </section>
 
+  <!-- =========================================================
+       REVIEWS
+  ========================================================= -->
   <section class="reviews-section" id="reviews" aria-label="Patient reviews">
     <div class="section-header">
       <span class="label fade-up">Patient Stories</span>
