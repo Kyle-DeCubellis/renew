@@ -939,19 +939,18 @@
     .instagram-feed-placeholder {
       flex-shrink: 0;
       display: flex;
-      gap: 8px;
-      max-height: 500px;
-      overflow: hidden;
+      flex-direction: column;
+      gap: 16px;
+      width: 340px;
     }
 
     .ig-screenshot {
-      width: 200px;
-      height: 500px;
-      object-fit: cover;
-      object-position: top;
+      width: 100%;
+      height: auto;
       display: block;
       opacity: 0.9;
       transition: opacity 0.3s;
+      border-radius: 4px;
     }
 
     .instagram-feed-placeholder a:hover .ig-screenshot { opacity: 1; }
@@ -1487,7 +1486,7 @@
       .instagram-section { padding: 60px 24px; }
       .instagram-inner { flex-direction: column; gap: 48px; }
       .instagram-feed-placeholder { width: 100%; }
-      .ig-screenshot { width: 50%; height: 360px; }
+      .ig-screenshot { width: 100%; height: auto; }
       .reviews-section { padding: 60px 24px; }
       .reviews-grid {
         grid-template-columns: 1fr;
