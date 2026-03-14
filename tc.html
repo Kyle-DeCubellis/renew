@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Teri Ciccone, MD | Renew Aesthetic Medicine &amp; Wellness</title>
+  <meta name="description" content="Meet Dr. Teri Ciccone, MD — Founder and Physician at Renew Aesthetic Medicine & Wellness in Southborough, MA. Specializing in Aesthetic Medicine and Women's Health." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --charcoal: #2C2520;
+      --cream: #FAF7F2;
+      --gold: #B8975A;
+      --taupe: #8B7A68;
+      --sage: #7A9178;
+      --gold-light: rgba(184, 151, 90, 0.12);
+      --gold-border: rgba(184, 151, 90, 0.35);
+    }
+
+    body { background: var(--cream); color: var(--charcoal); font-family: 'Jost', sans-serif; }
+    a { text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      z-index: 100;
+      background: rgba(250, 247, 242, 0.95);
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      color: inherit;
+    }
+
+    .nav-logo-primary {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    .nav-back {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    .nav-cta {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 10px 24px;
+      background: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .nav-cta:hover { background: var(--gold); color: var(--charcoal); }
+
+    /* HERO */
+    .provider-hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 80px 100px;
+    }
+
+    .provider-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Images/tc.webp');
+      background-size: cover;
+      background-position: center top;
+    }
+
+    .provider-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(44, 37, 32, 0.85) 0%,
+        rgba(44, 37, 32, 0.40) 50%,
+        rgba(44, 37, 32, 0.10) 100%
+      );
+    }
+
+    .provider-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .provider-hero-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .provider-hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.0;
+      margin-bottom: 20px;
+    }
+
+    .provider-hero-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 242, 0.75);
+      margin-bottom: 10px;
+    }
+
+    .provider-hero-specialty {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: rgba(250, 247, 242, 0.6);
+      font-style: italic;
+    }
+
+    /* BIO SECTION */
+    .provider-bio {
+      background: var(--cream);
+      padding: 100px 80px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 40px;
+    }
+
+    .provider-bio-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--charcoal);
+      margin-bottom: 32px;
+    }
+
+    .provider-bio-detail {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.9;
+      color: var(--taupe);
+      margin-bottom: 48px;
+    }
+
+    .btn-gold {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      padding: 16px 40px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      display: inline-block;
+    }
+
+    .btn-gold:hover { opacity: 0.85; }
+
+    /* FOOTER MINI */
+    .provider-footer {
+      background: var(--charcoal);
+      padding: 48px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .provider-footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .provider-footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .provider-footer-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 242, 0.6);
+      transition: color 0.2s;
+    }
+
+    .provider-footer-links a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 767px) {
+      .nav { padding: 0 24px; height: 68px; }
+      .nav-back { display: none; }
+      .provider-hero { padding: 0 24px 80px; }
+      .provider-hero-name { font-size: clamp(40px, 10vw, 64px); }
+      .provider-bio { padding: 60px 24px; }
+      .provider-footer { padding: 40px 24px; flex-direction: column; gap: 24px; text-align: center; }
+      .provider-footer-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo" aria-label="Renew – Home">
+      <span class="nav-logo-primary">Renew</span>
+      <span class="nav-logo-sub">Aesthetic Medicine &amp; Wellness</span>
+    </a>
+    <a href="index.html#providers" class="nav-back">← All Providers</a>
+    <button class="nav-cta" onclick="window.location.href='index.html'">Book Now</button>
+  </nav>
+
+  <section class="provider-hero" aria-label="Dr. Teri Ciccone">
+    <div class="provider-hero-bg" aria-hidden="true"></div>
+    <div class="provider-hero-overlay" aria-hidden="true"></div>
+    <div class="provider-hero-content">
+      <span class="provider-hero-label">Founder &amp; Physician</span>
+      <h1 class="provider-hero-name">Dr. Teri<br>Ciccone, MD</h1>
+      <p class="provider-hero-title">Aesthetic Medicine &amp; Women's Health</p>
+      <p class="provider-hero-specialty">Est. 2016 · Southborough, MA</p>
+    </div>
+  </section>
+
+  <div class="provider-bio">
+    <div class="gold-rule"></div>
+    <p class="provider-bio-text">
+      Dr. Teri Ciccone founded Renew Aesthetic Medicine &amp; Wellness in 2016 with a vision of bringing the highest standard of aesthetic medicine to the Southborough community — blending clinical precision with a deeply personal approach.
+    </p>
+    <p class="provider-bio-detail">
+      Board-certified and trained in aesthetic medicine and women's health, Dr. Ciccone brings a physician's eye and an artist's sensibility to every consultation. She is known for her expertise in medical weight loss, hormonal health, and non-surgical rejuvenation — helping patients feel as well as they look.
+    </p>
+    <button class="btn-gold" onclick="window.location.href='index.html'">Book a Consultation</button>
+  </div>
+
+  <footer class="provider-footer">
+    <span class="provider-footer-logo">Renew</span>
+    <div class="provider-footer-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#providers">Providers</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
