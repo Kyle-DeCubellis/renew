@@ -577,8 +577,8 @@
        SERVICES
     ========================================================= */
     .services-section {
-      background: var(--charcoal);
-      padding: 100px 80px;
+      background: var(--cream);
+      padding: 80px;
     }
 
     .section-header {
@@ -604,56 +604,71 @@
       margin-top: 8px;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      max-width: 1200px;
-      margin: 0 auto;
+    .services-header {
+      margin-bottom: 40px;
     }
 
-    .service-card {
-      background: var(--cream);
-      padding: 40px 32px;
-      border-top: 3px solid transparent;
-      transition: all 0.35s ease;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      color: inherit;
+    .services-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(72px, 11vw, 140px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 0.88;
+      margin-bottom: 32px;
     }
 
-    .service-card:hover {
-      border-top-color: var(--gold);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(44,37,32,0.15);
-    }
-
-    .service-num {
+    .services-view-all {
+      display: inline-block;
       font-family: 'Jost', sans-serif;
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.15em;
-      color: var(--gold);
-      margin-bottom: 24px;
-      display: block;
-    }
-
-    .service-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: var(--charcoal);
-      line-height: 1.3;
-      margin-bottom: 12px;
+      border: 1px solid var(--charcoal);
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
 
-    .service-desc {
+    .services-view-all:hover {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .service-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .service-card-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover .service-card-image { opacity: 0.88; }
+
+    .service-card-name {
       font-family: 'Jost', sans-serif;
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--taupe);
-      line-height: 1.6;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      padding: 16px 4px 8px;
+      display: block;
     }
 
     /* =========================================================
@@ -1218,8 +1233,7 @@
 
       .hero { padding: 120px 48px 80px; }
 
-      .services-section { padding: 80px 48px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-section { padding: 60px 48px; }
 
       .about-section { padding: 80px 48px; }
       .about-inner { gap: 60px; }
@@ -1331,8 +1345,8 @@
         max-width: 280px;
       }
 
-      .services-section { padding: 60px 24px; }
-      .services-grid { grid-template-columns: 1fr; gap: 1px; }
+      .services-section { padding: 48px 24px; }
+      .services-headline { font-size: clamp(60px, 18vw, 90px); }
 
       .about-section { padding: 60px 24px; }
       .about-inner {
@@ -1762,71 +1776,59 @@
        SERVICES
   ========================================================= -->
   <section class="services-section" id="services" aria-label="Services">
-    <div class="section-header">
-      <span class="label fade-up">Our Services</span>
-      <h2 class="section-headline-light fade-up" data-delay="1">Treatments tailored to you</h2>
+    <div class="services-header fade-up">
+      <h2 class="services-headline">Our<br>Services</h2>
+      <a href="#services" class="services-view-all">View All Services</a>
     </div>
 
     <div class="services-grid">
       <a href="botox.html" class="service-card fade-up" data-delay="1">
-        <span class="service-num">01</span>
-        <h3 class="service-name">Botox &amp; Neuromodulators</h3>
-        <p class="service-desc">Smooth lines, preserve natural expression</p>
+        <img src="Images/botox.webp" alt="Botox" class="service-card-image">
+        <span class="service-card-name">Botox</span>
       </a>
       <a href="fillers.html" class="service-card fade-up" data-delay="2">
-        <span class="service-num">02</span>
-        <h3 class="service-name">Dermal Fillers</h3>
-        <p class="service-desc">Restore volume and sculpt with precision</p>
+        <img src="Images/fillers.webp" alt="Dermal Fillers" class="service-card-image">
+        <span class="service-card-name">Dermal Fillers</span>
+      </a>
+      <a href="facials.html" class="service-card fade-up" data-delay="3">
+        <img src="Images/facials.webp" alt="Facials" class="service-card-image">
+        <span class="service-card-name">Facials</span>
+      </a>
+      <a href="laser-hair.html" class="service-card fade-up" data-delay="4">
+        <img src="Images/laserhair.webp" alt="Laser Hair Removal" class="service-card-image">
+        <span class="service-card-name">Laser Hair Removal</span>
+      </a>
+      <a href="acne-scars.html" class="service-card fade-up" data-delay="1">
+        <img src="Images/acne.webp" alt="Acne Scars" class="service-card-image">
+        <span class="service-card-name">Acne Scars</span>
+      </a>
+      <a href="icon.html" class="service-card fade-up" data-delay="2">
+        <img src="Images/icon.webp" alt="ICON" class="service-card-image">
+        <span class="service-card-name">ICON</span>
+      </a>
+      <a href="ipl.html" class="service-card fade-up" data-delay="3">
+        <img src="Images/ipl.webp" alt="IPL" class="service-card-image">
+        <span class="service-card-name">IPL</span>
+      </a>
+      <a href="laser-skin.html" class="service-card fade-up" data-delay="4">
+        <img src="Images/laserskin.webp" alt="Laser Skin Rejuvenation" class="service-card-image">
+        <span class="service-card-name">Laser Skin Rejuvenation</span>
+      </a>
+      <a href="weight-loss.html" class="service-card fade-up" data-delay="1">
+        <img src="Images/medicalwl.webp" alt="Medical Weight Loss" class="service-card-image">
+        <span class="service-card-name">Medical Weight Loss</span>
+      </a>
+      <a href="microneedling.html" class="service-card fade-up" data-delay="2">
+        <img src="Images/micro.webp" alt="Microneedling" class="service-card-image">
+        <span class="service-card-name">Microneedling</span>
       </a>
       <a href="sculptra.html" class="service-card fade-up" data-delay="3">
-        <span class="service-num">03</span>
-        <h3 class="service-name">Sculptra</h3>
-        <p class="service-desc">Gradual, natural-looking volume restoration</p>
+        <img src="Images/sculptra.webp" alt="Sculptra" class="service-card-image">
+        <span class="service-card-name">Sculptra</span>
       </a>
-      <a href="microneedling.html" class="service-card fade-up" data-delay="4">
-        <span class="service-num">04</span>
-        <h3 class="service-name">Microneedling</h3>
-        <p class="service-desc">Resurface and renew your skin's texture</p>
-      </a>
-      <a href="laser-hair.html" class="service-card fade-up" data-delay="5">
-        <span class="service-num">05</span>
-        <h3 class="service-name">Laser Hair Removal</h3>
-        <p class="service-desc">Permanent reduction for silky-smooth skin</p>
-      </a>
-      <a href="acne-scars.html" class="service-card fade-up" data-delay="6">
-        <span class="service-num">06</span>
-        <h3 class="service-name">Acne Scars</h3>
-        <p class="service-desc">Resurface and restore your skin's texture</p>
-      </a>
-      <a href="icon.html" class="service-card fade-up" data-delay="7">
-        <span class="service-num">07</span>
-        <h3 class="service-name">ICON Laser</h3>
-        <p class="service-desc">Advanced light-based skin renewal</p>
-      </a>
-      <a href="ipl.html" class="service-card fade-up" data-delay="8">
-        <span class="service-num">08</span>
-        <h3 class="service-name">IPL Photofacial</h3>
-        <p class="service-desc">Correct pigment, redness, and sun damage</p>
-      </a>
-      <a href="laser-skin.html" class="service-card fade-up" data-delay="1">
-        <span class="service-num">09</span>
-        <h3 class="service-name">Laser Skin Rejuvenation</h3>
-        <p class="service-desc">Renew your skin's texture, tone, and radiance</p>
-      </a>
-      <a href="weight-loss.html" class="service-card fade-up" data-delay="2">
-        <span class="service-num">10</span>
-        <h3 class="service-name">Medical Weight Loss</h3>
-        <p class="service-desc">Clinician-guided programs for lasting results</p>
-      </a>
-      <a href="hormone-balance.html" class="service-card fade-up" data-delay="3">
-        <span class="service-num">11</span>
-        <h3 class="service-name">Hormone Balance</h3>
-        <p class="service-desc">Feel balanced, energized, and fully yourself</p>
-      </a>
-      <a href="facials.html" class="service-card fade-up" data-delay="4">
-        <span class="service-num">12</span>
-        <h3 class="service-name">Facials &amp; Skin Care</h3>
-        <p class="service-desc">Customized treatments for your skin's needs</p>
+      <a href="hormone-balance.html" class="service-card fade-up" data-delay="4">
+        <img src="Images/hormone.webp" alt="Hormone Balance" class="service-card-image">
+        <span class="service-card-name">Hormone Balance</span>
       </a>
     </div>
   </section>
