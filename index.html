@@ -1600,6 +1600,31 @@
 
     .booking-modal-close:hover { opacity: 1; }
 
+    .booking-demo-banner {
+      background: rgba(184, 151, 90, 0.08);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 7px 44px 7px 16px; /* right pad clears the × button */
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      color: var(--taupe);
+      font-style: italic;
+      flex-shrink: 0;
+    }
+
+    /* Jane demo notice — below standalone CTAs on homepage */
+    .jane-demo-notice {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      color: var(--taupe);
+      opacity: 0.7;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
     .booking-modal iframe {
       flex: 1;
       width: 100%;
@@ -1818,6 +1843,7 @@
         <button onclick="openBookingModal()" class="btn btn-gold">Free Consultation</button>
         <a href="#services" class="btn btn-ghost-dark">Explore Services</a>
       </div>
+      <p class="jane-demo-notice fade-up" data-delay="4">Demo booking flow — will connect to your Jane account at launch.</p>
 
       <div class="hero-stats fade-up" data-delay="4">
         <div class="stat-item">
@@ -2132,6 +2158,7 @@
       <button onclick="openBookingModal()" class="btn btn-gold">Book Free Consultation</button>
       <a href="tel:5083338894" class="btn btn-ghost-cream">Call Us: (508) 333-8894</a>
     </div>
+    <p class="jane-demo-notice fade-up" data-delay="3">Demo booking flow — will connect to your Jane account at launch.</p>
 
     <div id="booking-widget" aria-hidden="true"></div>
   </section>
@@ -2165,6 +2192,7 @@
         <a href="tel:5083338894" class="contact-btn-call">Call 508-333-8894</a>
         <button onclick="openBookingModal()" class="contact-btn-book">Request Appointment</button>
       </div>
+      <p class="jane-demo-notice">Demo booking flow — will connect to your Jane account at launch.</p>
     </div>
   </section>
 
@@ -2224,6 +2252,7 @@
   <div class="booking-modal-overlay" id="booking-modal-overlay" role="dialog" aria-modal="true" aria-label="Online booking">
     <div class="booking-modal">
       <button class="booking-modal-close" id="booking-modal-close" aria-label="Close booking">&times;</button>
+      <div class="booking-demo-banner">Demo booking flow — will connect to your Jane account at launch.</div>
       <div class="booking-placeholder" id="booking-placeholder">
         <strong>Online booking coming soon</strong>
         <p>Call us at <a href="tel:5083338894">(508) 333-8894</a> to schedule your appointment.</p>
@@ -2249,7 +2278,7 @@
   ========================================================= -->
   <script>
     // TODO: Replace with Renew's Jane URL when they sign up - format: https://[clinicname].janeapp.com
-    var JANE_BOOKING_URL = 'https://YOUR-CLINIC.janeapp.com';
+    var JANE_BOOKING_URL = 'https://demo.janeapp.com';
 
     // ---- Booking modal ----
     var bookingOverlay  = document.getElementById('booking-modal-overlay');

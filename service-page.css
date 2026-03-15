@@ -146,6 +146,21 @@ img { display: block; max-width: 100%; }
 
 .btn-gold:hover { opacity: 0.85; }
 
+/* Jane demo notice — subtle, below CTAs */
+.jane-demo-notice {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--taupe);
+  opacity: 0.7;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Allow nav-cta and btn-gold to render correctly as <a> tags */
+a.nav-cta, a.btn-gold { display: inline-block; }
+
 /* FOOTER */
 .service-footer {
   background: var(--charcoal);
